@@ -1,0 +1,173 @@
+/* App.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+.app-container {
+  min-height: 100vh;
+  background-color: #1a202c; /* Equivalent to bg-gray-900 */
+  font-family: 'Inter', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #ffffff; /* Equivalent to bg-gray-800 */
+  padding: 2rem; /* Equivalent to p-4 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Equivalent to shadow-md */
+}
+
+.navbar-brand {
+  color: #ef4444; /* Equivalent to text-red-500 */
+  font-size: 1.5rem; /* Equivalent to text-2xl */
+  font-weight: 700; /* Equivalent to font-bold */
+  margin-left: 2rem; /* Equivalent to ml-8 */
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem; /* Equivalent to space-x-6 */
+  margin-right: 2rem; /* Equivalent to mr-8 */
+   /* Equivalent to text-white */
+  font-weight: bold;
+}
+
+
+.navbar-link {
+  color: inherit;
+  text-decoration: none;
+  transition-property: color;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* Equivalent to transition duration-300 */
+  color:#000000;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 560px){
+    .navbar-link{
+    color: #ffffff;
+    
+  }
+}
+
+.navbar-link:hover {
+  color: #fca5a5; /* Equivalent to hover:text-red-300 */
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: calc(100vh - 64px); /* Adjusting for navbar height (64px for p-4 and default font size) */
+  background-image: url('forest.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* @media only screen and (min-width: 200px) and (max-width: 560px){
+  
+} */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: #000000;
+  opacity: 0.5;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  padding: 2rem; /* Equivalent to p-8 */
+}
+
+.hero-title {
+  font-size: 3rem; /* Equivalent to text-5xl */
+  line-height: 1.25; /* Equivalent to leading-tight */
+  font-weight: 700; /* Equivalent to font-bold */
+  color: #ffffff; /* Equivalent to text-white */
+  margin-bottom: 1.5rem; /* Equivalent to mb-6 */
+}
+
+@media (min-width: 768px) { /* md breakpoint for Tailwind */
+  .hero-title {
+    font-size: 3.75rem; /* Equivalent to md:text-6xl */
+  }
+}
+
+.hero-description {
+  font-size: 1.25rem; /* Equivalent to text-xl */
+  color: #ffffff; /* Equivalent to text-white */
+  margin-bottom: 2.5rem; /* Equivalent to mb-10 */
+  max-width: 80rem; /* Equivalent to max-w-3xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) { /* md breakpoint for Tailwind */
+  .hero-description {
+    font-size: 1.5rem; /* Equivalent to md:text-2xl */
+  }
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column; /* Equivalent to flex-col */
+  justify-content: center;
+  gap: 1rem; /* Equivalent to space-y-4 */
+}
+
+@media (min-width: 640px) { /* sm breakpoint for Tailwind */
+  .hero-buttons {
+    flex-direction: row; /* Equivalent to sm:flex-row */
+    gap: 1.5rem; /* Equivalent to sm:space-x-6 */
+    margin-top: 0; /* Equivalent to sm:space-y-0 */
+  }
+}
+
+.btn-get-started,
+.btn-apply-exams {
+  font-weight: 700; /* Equivalent to font-bold */
+  color: #ffffff; /* Equivalent to text-white */
+  padding: 0.75rem 2rem; /* Equivalent to py-3 px-8 */
+  border-radius: 0.5rem; /* Equivalent to rounded-lg */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
+  transition-property: background-color, transform;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* Equivalent to transition duration-300 */
+  transform: scale(1); /* Initial scale for transform hover:scale-105 */
+  cursor: pointer;
+  border: none;
+}
+
+.btn-get-started {
+  background-color: #ef4444; /* Equivalent to bg-red-500 */
+}
+
+.btn-get-started:hover {
+  background-color: #dc2626; /* Equivalent to hover:bg-red-600 */
+  transform: scale(1.05); /* Equivalent to transform hover:scale-105 */
+}
+
+.btn-apply-exams {
+  background-color: #dc2626; /* Equivalent to bg-red-600 */
+}
+
+.btn-apply-exams:hover {
+  background-color: #b91c1c; /* Equivalent to hover:bg-red-700 */
+  transform: scale(1.05); /* Equivalent to transform hover:scale-105 */
+}
+
+.menu{
+  font-size: 0px;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 560px){
+
+  .menu{
+    font-size: 30px;
+  }
+}
