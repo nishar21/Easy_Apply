@@ -78,7 +78,7 @@ function EntranceExams() {
           {/* TS EAMCET Button - Now triggers the dialog */}
           <button
             className="button-ts3"
-            onClick={() => handleApplyInactiveExam('TS EAMCET', 'https://eamcet.tsche.ac.in/')}
+            onClick={() => handleApplyInactiveExam('TS EAMCET', 'https://tgeapcet.nic.in/default.aspx/')}
           >
             Apply to TS EAMCET
           </button>
@@ -95,11 +95,10 @@ function EntranceExams() {
 
       {/* Confirmation Dialog (Modal) */}
       {showDialog && (
-        <div className="dialog-overlay"> {/* This will be a semi-transparent background */}
+        <div className="dialog-overlay">
           <div className="dialog-box">
             <h3>No Registration Currently Open</h3>
-            <p>
-              Registration for **{dialogExamName}** is not currently open.
+            <p className="dialog-message"> Registration for **{dialogExamName}** is not currently open.
               Would you like to open the main website for information?
             </p>
             <div className="dialog-actions">

@@ -1,0 +1,1003 @@
+/* General Body and Font Styles */
+/* body {
+    font-family: Arial, sans-serif; /* Changed to Arial for consistency with the new styles 
+    background-color: #f5f7fa; /* Light background for the page, from new styles 
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling 
+} */
+
+/* App Container */
+.appContainer4 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar4 {
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.navbarBrand4 {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 600; /* font-semibold */
+    color: #1f2937; /* text-gray-800 */
+}
+
+.navbarLinks4 {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* space-x-4 */
+}
+
+.navbarLinkAbout4,
+.navbarLinkSignup4,
+.navbarLinkLogin4,
+.navbarLinkContact4 {
+    color: #4b5563; /* text-gray-600 */
+    padding: 0.25rem 0.75rem; /* px-3 py-1 */
+    border-radius: 0.375rem; /* rounded-md */
+    transition-property: color, background-color;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+}
+
+.navbarLinkAbout4:hover,
+.navbarLinkSignup4:hover,
+.navbarLinkLogin4:hover,
+.navbarLinkContact4:hover {
+    color: #ef4444; /* hover:text-blue-600 */
+    background-color: #fff0f0; /* Adjusted from hover:bg-blue-50 */
+}
+
+.mobileMenuButton4 {
+    display: none; /* hidden on desktop by default */
+    color: #4b5563; /* text-gray-600 */
+    padding: 0.5rem; /* p-2 */
+    border-radius: 0.375rem; /* rounded-md */
+    transition-property: color, background-color;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+}
+
+.mobileMenuButton4:hover {
+    color: #ef4444; /* hover:text-blue-600 */
+    background-color: #fff0f0; /* Adjusted from hover:bg-blue-50 */
+}
+
+@media (max-width: 1023px) { /* lg breakpoint */
+    .navbarLinks4 > a {
+        display: none; /* Hide desktop links on mobile */
+    }
+    .mobileMenuButton4 {
+        display: block; /* Show mobile menu button */
+    }
+}
+
+
+/* Overall Page Layout (from previous snippet, adjusted to be .main5) */
+.main5 {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px; /* Max width for the content */
+    margin: 20px auto; /* Center the main content */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Soft shadow for the main container */
+}
+
+
+/* Sidebar / Filters Section Styling */
+.filters5 {
+    font-family: Arial, sans-serif; /* Consistent font */
+    background-color: #fff; /* White background for the entire filter card */
+    border-radius: 8px; /* Slightly rounded corners for the whole filter box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* More pronounced shadow as in the image */
+    width: 280px; /* Adjusted width for filters */
+    flex-shrink: 0; /* Prevent filters from shrinking */
+    padding-right: 20px; /* For spacing before the college list */
+    border-right: 1px solid #e0e0e0; /* Separator line */
+    overflow: hidden; /* Ensures borders/shadows are contained */
+}
+
+/* Individual Filter Section (Degree, State) */
+.filter-section5 {
+    padding: 15px 20px; /* Padding inside each section */
+    border-bottom: 1px solid #f0f0f0; /* Light separator between sections */
+}
+
+.filter-section5:last-child {
+    border-bottom: none; /* No border for the last section */
+}
+
+/* Section Header (Degree, State) */
+.section-header5 {
+    font-size: 1.1em; /* Adjusted font size slightly larger */
+    font-weight: 600; /* Semi-bold */
+    color: #333; /* Darker text */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px; /* Space between header and search */
+    cursor: pointer;
+    padding: 5px 0; /* Adjusted padding */
+}
+
+/* Arrow icon (you'll need to use an SVG or font icon for this) */
+.arrow-icon5 {
+    /* For a simple down arrow using CSS if not using an icon font/SVG */
+    border: solid #555; /* Original color from the college list CSS */
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transition: transform 0.3s ease; /* Smooth rotation */
+    margin-left: 10px; /* Space from text */
+}
+
+/* Optional: Add a class for collapsed state */
+.section-header5.collapsed .arrow-icon5 {
+    transform: rotate(-135deg);
+}
+
+
+/* Search Box */
+.search-box5 {
+    margin-bottom: 15px; /* Space between search and options */
+}
+
+.search-box5 input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px; /* Slightly rounded search input */
+    font-size: 0.9rem;
+    color: #333;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    outline: none; /* Remove outline on focus */
+}
+
+.search-box5 input[type="text"]::placeholder {
+    color: #999;
+}
+
+.search-box5 input[type="text"]:focus {
+    border-color: #ef4444; /* Highlight on focus */
+}
+
+/* Options List */
+.options-list5 {
+    max-height: 200px; /* Fixed height for scrolling if many options */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 5px; /* Space for the scrollbar so it doesn't overlap content */
+    display: flex; /* Ensure flex for option items */
+    flex-direction: column; /* Stack options vertically */
+    gap: 10px; /* Space between options */
+}
+
+/* Custom Scrollbar (for WebKit browsers like Chrome, Safari) */
+.options-list5::-webkit-scrollbar {
+    width: 6px;
+}
+
+.options-list5::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.options-list5::-webkit-scrollbar-thumb {
+    background: #c7c7c7;
+    border-radius: 10px;
+}
+
+.options-list5::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+
+/* Individual Option Item (label wrapping checkbox, text, count) */
+.option-item5 {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically center items */
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #555; /* Lighter text for options */
+}
+
+.option-item5:last-child {
+    margin-bottom: 0;
+}
+
+/* Checkbox styling */
+.option-checkbox5 {
+    appearance: none; /* Hides default checkbox */
+    -webkit-appearance: none; /* For Safari */
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 10px; /* Space between checkbox and text */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    flex-shrink: 0; /* Prevents checkbox from shrinking */
+}
+
+.option-checkbox5:checked {
+    background-color: #ef4444; /* Red background when checked */
+    border-color: #ef4444;
+}
+
+.option-checkbox5:checked::before {
+    content: '\2713'; /* Unicode checkmark */
+    display: block;
+    color: #fff; /* White checkmark */
+    font-size: 14px;
+    line-height: 1; /* Adjust as needed for vertical alignment */
+}
+
+/* Option Text (e.g., Diploma, M.Com) */
+.option-text5 {
+    flex-grow: 1; /* Allows text to take available space */
+    white-space: nowrap; /* Prevent text from wrapping prematurely */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+}
+
+/* Option Count (e.g., (6971)) */
+.option-count5 {
+    color: #888; /* Lighter grey for count */
+    margin-left: 10px; /* Space between text and count */
+    font-size: 0.85rem;
+    flex-shrink: 0; /* Prevents count from shrinking */
+}
+
+/* New scrollable container for degree options - if separate from .options-list */
+.degreeOptionsScrollable4 { /* This class already has a '4', so no change */
+    max-height: 200px; /* Sets a maximum height for the box */
+    overflow-y: auto; /* Enables vertical scrolling if content exceeds max-height */
+    padding-right: 8px; /* Adds space for the scrollbar to prevent content overlap */
+    scrollbar-width: thin; /* For Firefox: makes the scrollbar thinner */
+    scrollbar-color: #cbd5e1 #f1f5f9; /* For Firefox: sets scrollbar thumb and track colors */
+}
+
+/* Styles for Webkit browsers (Chrome, Safari) scrollbar */
+.degreeOptionsScrollable4::-webkit-scrollbar { /* This class already has a '4', so no change */
+    width: 8px; /* Width of the scrollbar */
+}
+.degreeOptionsScrollable4::-webkit-scrollbar-track { /* This class already has a '4', so no change */
+    background: #f1f1f1; /* Color of the scrollbar track */
+    border-radius: 10px;
+}
+.degreeOptionsScrollable4::-webkit-scrollbar-thumb { /* This class already has a '4', so no change */
+    background-color: #cbd5e1; /* Color of the scrollbar thumb */
+    border-radius: 10px;
+    border: 2px solid #f1f5f1; /* Padding around the thumb */
+}
+
+/* College List Section Styling */
+.college-list5 {
+    flex-grow: 1; /* Allows college list to take remaining space */
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between college cards */
+}
+
+.college-card5 {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    gap: 20px; /* Space between image and details */
+    position: relative; /* For absolute positioning of icons */
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for cards */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.college-card5:hover {
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.college-image5 {
+    flex-shrink: 0; /* Prevent image from shrinking */
+    width: 40%;
+    height: 90%;
+}
+
+.college-image5 img {
+    width: 100%; 
+    height: 100%;  
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #f0f0f0; 
+}
+
+.college-details5 {
+    flex-grow: 1;
+}
+
+.college-details5 h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.3em;
+    color: #222;
+    line-height: 1.3;
+}
+
+.college-meta5 {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.college-info5 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Closer gap for info items */
+    margin-bottom: 15px;
+}
+
+.info-item5 {
+    background-color: #f0f4f7; /* Lighter background for info tags */
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    color: #333;
+    white-space: nowrap; /* Keep items on one line */
+}
+
+.info-item5 strong {
+    font-weight: 600;
+    color: #000;
+}
+
+.college-description5 {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.college-description5 a {
+    color: #ef4444; /* Changed from #007bff */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.college-description5 a:hover {
+    text-decoration: underline;
+}
+
+.shortlisted-info5, .rating-info5 {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically align items */
+    background-color: #ffeff0; /* Changed from #e6f7ff */
+    border: 1px solid #ffcccf; /* Changed from #91d5ff */
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    color: #b30000; /* Changed from #0056b3 */
+    margin-bottom: 15px;
+    width: fit-content; /* Only take content width */
+}
+
+.rating-info5 span {
+    color: #f7b400; /* Star color */
+    font-weight: bold;
+}
+
+.rating-info5 .naac-accreditation5 {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #ffdee0; /* Changed from #a0eaff */
+    color: #388e3c; /* Green color for NAAC */
+    font-weight: 600;
+}
+
+.rating-info5 .naac-accreditation5 img {
+    width: 25px; /* Adjust size of NAAC logo */
+    height: 25px;
+    margin-right: 5px;
+    border-radius: 3px; /* Slight roundness for logo */
+}
+
+.college-actions5 {
+    display: flex;
+    gap: 15px; /* Space between buttons */
+    margin-top: 15px;
+}
+
+.college-actions5 button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.get-counselling-btn5 {
+    background-color: #ef4444; /* Changed from #007bff */
+    color: white;
+}
+
+.get-counselling-btn5:hover {
+    background-color: #d13030; /* Darker red on hover */
+}
+
+.download-brochure-btn5 {
+    background-color: white;
+    color: #ef4444; /* Changed from #007bff */
+    border: 1px solid #ef4444; /* Changed from #007bff */
+}
+
+.download-brochure-btn5:hover {
+    background-color: #fff0f0; /* Changed from #f0f7ff */
+    color: #d13030; /* Darker red on hover */
+    border-color: #d13030; /* Darker red on hover */
+}
+
+.college-actions-right5 {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    display: flex;
+    flex-direction: column; /* Stack icons vertically */
+    gap: 10px; /* Space between icons */
+    font-size: 1.4em; /* Larger icons */
+    color: #aaa; /* Lighter color for inactive icons */
+}
+
+.heart-icon5, .compare-icon5 {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.heart-icon5:hover {
+    color: #ff6b6b; /* Red on hover */
+}
+
+.compare-icon5:hover {
+    color: #ef4444; /* Changed from #007bff */
+}
+
+/* Optional: Styling for a 'Shortlisted' state if the heart is filled */
+.heart-icon5.shortlisted {
+    color: #ff6b6b; /* Filled red heart */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .main5 {
+        flex-direction: column;
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .filters5 {
+        width: 100%;
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .college-list5 {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .college-card5 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .college-image5 img {
+        width: 100%; /* Full width image on smaller screens */
+        height: auto; /* Auto height to maintain aspect ratio */
+    }
+
+    .college-actions5 {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .college-actions5 button {
+        width: 100%;
+    }
+
+    .college-actions-right5 {
+        flex-direction: row; /* Icons side-by-side on small screens */
+        top: 15px;
+        right: 15px;
+        font-size: 1.2em;
+        gap: 15px;
+    }
+
+    .info-item5 {
+        font-size: 0.8em;
+        padding: 5px 10px;
+    }
+
+    .shortlisted-info5, .rating-info5 {
+        font-size: 0.8em;
+        padding: 6px 10px;
+    }
+
+    /* Adjust navbar on smaller screens */
+    .navbar4 {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-header5 {
+        font-size: 1em;
+    }
+
+    .option-item5 {
+        font-size: 0.9em;
+    }
+
+    .college-details5 h3 {
+        font-size: 1.1em;
+    }
+
+    .college-meta5, .college-description5 {
+        font-size: 0.85em;
+    }
+}
+
+
+/* Top Filters/Options - These classes seem to be for a different component or part */
+.topFiltersOptions4 { /* This class already has a '4', so no change */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.appliedFilterTag4 { /* This class already has a '4', so no change */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* space-x-2 */
+    background-color: #ffe6e6; /* bg-blue-100 changed to red tint */
+    color: #a00000; /* text-blue-800 changed to darker red */
+    padding: 0.25rem 0.75rem; /* px-3 py-1 */
+    border-radius: 9999px; /* rounded-full */
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500; /* font-medium */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* shadow-sm */
+}
+
+.removeFilterButton4 { /* This class already has a '4', so no change */
+    margin-left: 0.25rem; /* ml-1 */
+    color: #a00000; /* text-blue-800 changed to darker red */
+    border-radius: 9999px; /* rounded-full */
+    padding: 0.125rem; /* p-0.5 */
+    outline: none; /* focus:outline-none */
+    transition-property: color;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+}
+
+.removeFilterButton4:hover { /* This class already has a '4', so no change */
+    color: #ef4444; /* hover:text-blue-600 changed to red */
+}
+
+.collegeTypeRadios4 { /* This class already has a '4', so no change */
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* space-x-4 */
+    margin-top: 1rem; /* mt-4 */
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+    .collegeTypeRadios4 { /* This class already has a '4', so no change */
+        margin-top: 0; /* lg:mt-0 */
+    }
+}
+
+.collegeTypeLabel4 { /* This class already has a '4', so no change */
+    display: flex;
+    align-items: center;
+    color: #374151; /* text-gray-700 */
+    font-size: 0.875rem; /* text-sm */
+    cursor: pointer;
+}
+
+.collegeTypeRadio4 { /* This class already has a '4', so no change */
+    height: 1rem; /* h-4 */
+    width: 1rem; /* w-4 */
+    color: #ef4444; /* text-blue-600 changed to red */
+    border-radius: 9999px; /* rounded-full */
+}
+
+.collegeTypeText4 { /* This class already has a '4', so no change */
+    margin-left: 0.5rem; /* ml-2 */
+}
+
+/* Search Results Header */
+.searchResultsHeader4 { /* This class already has a '4', so no change */
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+    color: #1f2937; /* text-gray-800 */
+    margin-bottom: 1.5rem; /* mb-6 */
+}
+
+/* College Card Base Styles - Specific classes for colleges in other parts of the app */
+.collegeCardMadras4, /* This class already has a '4', so no change */
+.collegeCardDelhi4 { /* This class already has a '4', so no change */
+    background-color: #ffffff;
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+    padding: 1.5rem; /* p-6 */
+    margin-bottom: 1.5rem; /* mb-6 */
+    transition-property: transform, box-shadow;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+}
+
+.collegeCardMadras4:hover, /* This class already has a '4', so no change */
+.collegeCardDelhi4:hover { /* This class already has a '4', so no change */
+    transform: scale(1.01); /* hover:scale-[1.01] */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* hover:shadow-lg */
+}
+
+.collegeCardHeader4 { /* This class already has a '4', so no change */
+    display: flex;
+    flex-direction: column; /* flex-col */
+    align-items: flex-start; /* items-start */
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+    .collegeCardHeader4 { /* This class already has a '4', so no change */
+        flex-direction: row; /* lg:flex-row */
+        align-items: center; /* lg:items-center */
+    }
+}
+
+.collegeImageMadras4, /* This class already has a '4', so no change */
+.collegeImageDelhi4 { /* This class already has a '4', so no change */
+    width: 100%; /* w-full */
+    height: auto;
+    border-radius: 0.5rem; /* rounded-lg */
+    margin-right: 0; /* mr-0 */
+    margin-bottom: 1rem; /* mb-4 */
+    object-fit: cover;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* shadow-sm */
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+    .collegeImageMadras4, /* This class already has a '4', so no change */
+    .collegeImageDelhi4 { /* This class already has a '4', so no change */
+        width: 10rem; /* lg:w-40 */
+        margin-right: 1.5rem; /* lg:mr-6 */
+        margin-bottom: 0; /* lg:mb-0 */
+    }
+}
+
+.collegeInfoMadras4, /* This class already has a '4', so no change */
+.collegeInfoDelhi4 { /* This class already has a '4', so no change */
+    flex: 1; /* flex-1 */
+}
+
+.collegeNameRating4 { /* This class already has a '4', so no change */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.collegeNameText4 { /* This class already has a '4', so no change */
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700; /* font-bold */
+    color: #111827; /* text-gray-900 */
+}
+
+.collegeRating4 { /* This class already has a '4', so no change */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* space-x-2 */
+    font-size: 0.875rem; /* text-sm */
+}
+
+.collegeRatingValue4 { /* This class already has a '4', so no change */
+    background-color: #22c55e; /* bg-green-500 */
+    color: #ffffff;
+    padding: 0.125rem 0.5rem; /* px-2 py-0.5 */
+    border-radius: 9999px; /* rounded-full */
+    font-size: 0.75rem; /* text-xs */
+    font-weight: 600; /* font-semibold */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* shadow-sm */
+}
+
+.collegeRatingReviews4 { /* This class already has a '4', so no change */
+    color: #4b5563; /* text-gray-600 */
+}
+
+.collegeDetailsRow4 { /* This class already has a '4', so no change */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: #4b5563; /* text-gray-600 */
+    font-size: 0.875rem; /* text-sm */
+    margin-bottom: 0.5rem; /* mb-2 */
+    gap: 1rem; /* space-x-4 */
+}
+
+.collegeType4 { /* This class already has a '4', so no change */
+    font-weight: 600; /* font-semibold */
+    color: #047857; /* text-green-700 */
+}
+
+.collegeNrf4 { /* This class already has a '4', so no change */
+    display: flex;
+    align-items: center;
+}
+
+.nrfIcon4 { /* This class already has a '4', so no change */
+    width: 1rem; /* w-4 */
+    height: 1rem; /* h-4 */
+    margin-right: 0.25rem; /* mr-1 */
+    color: #f59e0b; /* text-yellow-500 */
+}
+
+.collegeStatsGrid4 { /* This class already has a '4', so no change */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* grid-cols-2 */
+    gap: 0.5rem; /* gap-2 */
+    font-size: 0.875rem; /* text-sm */
+    color: #374151; /* text-gray-700 */
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+    .collegeStatsGrid4 { /* This class already has a '4', so no change */
+        grid-template-columns: repeat(4, minmax(0, 1fr)); /* lg:grid-cols-4 */
+    }
+}
+
+.collegeStatItem4 span:first-child { /* This class already has a '4', so no change */
+    font-weight: 600; /* font-semibold */
+}
+
+.collegeDescription4 { /* This class already has a '4', so no change */
+    color: #374151; /* text-gray-700 */
+    font-size: 0.875rem; /* text-sm */
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+.readMoreLink4 { /* This class already has a '4', so no change */
+    color: #ef4444; /* Changed from #2563eb */
+}
+
+.readMoreLink4:hover { /* This class already has a '4', so no change */
+    text-decoration: underline;
+}
+
+.collegeActionsRow4 { /* This class already has a '4', so no change */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #6b7280; /* text-gray-500 */
+    font-size: 0.875rem; /* text-sm */
+}
+
+.shortlistInfo4 { /* This class already has a '4', so no change */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* space-x-2 */
+}
+
+.shortlistIcon4 { /* This class already has a '4', so no change */
+    width: 1.25rem; /* w-5 */
+    height: 1.25rem; /* h-5 */
+    color: #ef4444; /* Changed from #3b82f6 */
+}
+
+.shortlistCount4 { /* This class already has a '4', so no change */
+    font-weight: 600; /* font-semibold */
+    color: #ef4444; /* Changed from #2563eb */
+}
+
+.actionButtons4 { /* This class already has a '4', so no change */
+    display: flex;
+    gap: 1rem; /* space-x-4 */
+}
+
+.likeButton4, /* This class already has a '4', so no change */
+.moreOptionsButton4 { /* This class already has a '4', so no change */
+    color: #6b7280; /* text-gray-500 */
+    padding: 0.25rem; /* p-1 */
+    border-radius: 9999px; /* rounded-full */
+    transition-property: color, background-color;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+}
+
+.likeButton4:hover { /* This class already has a '4', so no change */
+    color: #ef4444; /* hover:text-red-500, already red */
+    background-color: #f9fafb; /* hover:bg-gray-100 */
+}
+
+.moreOptionsButton4:hover { /* This class already has a '4', so no change */
+    color: #ef4444; /* Changed from #3b82f6 */
+    background-color: #f9fafb; /* hover:bg-gray-100 */
+}
+
+.likeIcon4, /* This class already has a '4', so no change */
+.moreOptionsIcon4 { /* This class already has a '4', so no change */
+    width: 1.5rem; /* w-6 */
+    height: 1.5rem; /* h-6 */
+}
+
+.collegeFooter4 { /* This class already has a '4', so no change */
+    border-top: 1px solid #e5e7eb; /* border-t border-gray-200 */
+    padding-top: 1rem; /* pt-4 */
+    margin-top: 1rem; /* mt-4 */
+    display: flex;
+    flex-direction: column; /* flex-col */
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem; /* space-y-4 */
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+    .collegeFooter4 { /* This class already has a '4', so no change */
+        flex-direction: row; /* sm:flex-row */
+        gap: 0; /* sm:space-y-0 */
+        column-gap: 1rem; /* sm:space-x-4 */
+    }
+}
+
+.collegeLinks4 { /* This class already has a '4', so no change */
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.875rem; /* text-sm */
+    color: #374151; /* text-gray-700 */
+    gap: 1rem; /* space-x-4 */
+}
+
+.collegeLinkFees4, /* This class already has a '4', so no change */
+.collegeLinkAdmission4, /* This class already has a '4', so no change */
+.collegeLinkPlacement4 { /* This class already has a '4', so no change */
+    color: #ef4444; /* Changed from #2563eb */
+}
+
+.collegeLinkFees4:hover, /* This class already has a '4', so no change */
+.collegeLinkAdmission4:hover, /* This class already has a '4', so no change */
+.collegeLinkPlacement4:hover { /* This class already has a '4', so no change */
+    text-decoration: underline;
+}
+
+.collegeButtons4 { /* This class already has a '4', so no change */
+    display: flex;
+    gap: 0.5rem; /* space-x-2 */
+}
+
+.counselingButton4, /* This class already has a '4', so no change */
+.brochureButton4 { /* This class already has a '4', so no change */
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    border-radius: 0.375rem; /* rounded-md */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* shadow-md */
+    transition-property: background-color, transform;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+}
+
+.counselingButton4 { /* This class already has a '4', so no change */
+    background-color: #ef4444; /* Changed from #2563eb */
+    color: #ffffff;
+}
+
+.counselingButton4:hover { /* This class already has a '4', so no change */
+    background-color: #d13030; /* hover:bg-blue-700 changed to darker red */
+    transform: scale(1.05); /* hover:scale-105 */
+}
+
+.brochureButton4 { /* This class already has a '4', so no change */
+    border: 1px solid #ef4444; /* border border-blue-600 changed to red */
+    color: #ef4444; /* text-blue-600 changed to red */
+    background-color: #ffffff;
+}
+
+.brochureButton4:hover { /* This class already has a '4', so no change */
+    background-color: #fff0f0; /* hover:bg-blue-50 changed to red tint */
+    transform: scale(1.05); /* hover:scale-105 */
+}
+
+/* Advertisement Banner */
+.adBanner4 { /* This class already has a '4', so no change */
+    background-color: #ffffff;
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+    padding: 1rem; /* p-4 */
+    margin-bottom: 1.5rem; /* mb-6 */
+    display: flex;
+    flex-direction: column; /* flex-col */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition-property: transform, box-shadow;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+}
+
+.adBanner4:hover { /* This class already has a '4', so no change */
+    transform: scale(1.01); /* hover:scale-[1.01] */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* hover:shadow-lg */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+    .adBanner4 { /* This class already has a '4', so no change */
+        flex-direction: row; /* md:flex-row */
+        text-align: left; /* md:text-left */
+    }
+}
+
+.adImage4 { /* This class already has a '4', so no change */
+    width: 100%; /* w-full */
+    height: auto;
+    border-radius: 0.375rem; /* rounded-md */
+    margin-bottom: 1rem; /* mb-4 */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* shadow-sm */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+    .adImage4 { /* This class already has a '4', so no change */
+        width: auto; /* md:w-auto */
+        margin-bottom: 0; /* md:mb-0 */
+        margin-right: 1rem; /* md:mr-4 */
+    }
+}
+
+.adTextContent4 { /* This class already has a '4', so no change */
+    /* No specific styles needed here, children handle styling */
+}
+
+.adTitle1_4 { /* This class already has a '4', so no change */
+    color: #1f2937; /* text-gray-800 */
+    font-weight: 600; /* font-semibold */
+    font-size: 1.125rem; /* text-lg */
+    margin-bottom: 0.25rem; /* mb-1 */
+}
+
+.adTitle2_4 { /* This class already has a '4', so no change */
+    color: #ef4444; /* Changed from #2563eb */
+    font-weight: 700; /* font-bold */
+    font-size: 1.25rem; /* text-xl */
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.adSubtitle4 { /* This class already has a '4', so no change */
+    color: #4b5563; /* text-gray-600 */
+    font-size: 0.875rem; /* text-sm */
+}

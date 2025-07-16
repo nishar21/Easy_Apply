@@ -1,173 +1,345 @@
-/* App.css */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
-.app-container {
-  min-height: 100vh;
-  background-color: #1a202c; /* Equivalent to bg-gray-900 */
+/* Apply global styling to the actual body for consistency */
+body {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box;
   font-family: 'Inter', sans-serif;
+  background-color: #1a202c; /* Default background for the whole page 
+  color: white; Default text color */
 }
 
-/* Navbar */
-.navbar {
-  background-color: #ffffff; /* Equivalent to bg-gray-800 */
-  padding: 2rem; /* Equivalent to p-4 */
+.app-container6 {
+  /* This container will hold your page content */
+  /* Remove min-height: 100vh here if you want body to handle it */
+  /* Remove background-image from here if you want it on the body */
+  /* If you want the background image to cover only the app-container, keep it here */
+  /* For this example, let's keep it on app-container if it's the main scrollable area */
+  background-image: url('college2.png'); /* Ensure this path is correct relative to where CSS is compiled/served */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh; /* Ensure it covers at least the viewport height */
+  overflow-x: hidden; /* Prevent horizontal scroll on smaller screens if content overflows */
+}
+
+
+/* --- Navbar --- */
+.navbar6 {
+  background-color: #ffffff;
+  padding: 1rem 2rem; /* Adjusted padding slightly, originally 2rem for p-4 which is 16px. 1rem = 16px */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Equivalent to shadow-md */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-.navbar-brand {
-  color: #ef4444; /* Equivalent to text-red-500 */
-  font-size: 1.5rem; /* Equivalent to text-2xl */
-  font-weight: 700; /* Equivalent to font-bold */
-  margin-left: 2rem; /* Equivalent to ml-8 */
+.navbar-brand6 {
+  color: #ef4444;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-left: 1rem; /* Adjust margin for smaller screens */
 }
 
-.navbar-links {
+.navbar-links6 {
   display: flex;
-  gap: 1.5rem; /* Equivalent to space-x-6 */
-  margin-right: 2rem; /* Equivalent to mr-8 */
-   /* Equivalent to text-white */
+  gap: 1.5rem;
+  margin-right: 1rem; /* Adjust margin for smaller screens */
+  color: #000000; /* Default color for links in the navbar */
   font-weight: bold;
 }
 
-
-.navbar-link {
+.navbar-link6 {
   color: inherit;
   text-decoration: none;
-  transition-property: color;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* Equivalent to transition duration-300 */
-  color:#000000;
+  transition: color 0.3s ease;
 }
 
-@media only screen and (min-width: 200px) and (max-width: 560px){
-    .navbar-link{
-    color: #ffffff;
-    
+.navbar-link6:hover {
+  color: #fca5a5;
+}
+
+/* --- Mobile Navbar Specifics --- */
+
+
+@media (max-width: 510px) { /* Medium breakpoint (similar to md: in Tailwind) */
+  .navbar-link6 {
+    display: none; /* Hide regular links on screens smaller than 768px */
+  }
+
+  /* Adjust brand margin for very small screens */
+  .navbar-brand6 {
+    margin-left: 1rem; /* Smaller margin on mobile */
   }
 }
 
-.navbar-link:hover {
-  color: #fca5a5; /* Equivalent to hover:text-red-300 */
-}
 
-/* Hero Section */
-.hero-section {
+/* --- Hero Section --- */
+.hero-section6 {
   position: relative;
-  height: calc(100vh - 64px); /* Adjusting for navbar height (64px for p-4 and default font size) */
-  background-image: url('forest.jpg');
+  height: calc(100vh - 64px); /* Adjusting for navbar height */
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: white; /* Ensure text is white */
 }
 
-/* @media only screen and (min-width: 200px) and (max-width: 560px){
-  
-} */
-
-.hero-overlay {
+.hero-overlay6 {
   position: absolute;
   inset: 0;
   background-color: #000000;
   opacity: 0.5;
 }
 
-.hero-content {
+.hero-content6 {
   position: relative;
   z-index: 10;
-  padding: 2rem; /* Equivalent to p-8 */
+  padding: 2rem;
+  max-width: 90%; /* Max width for content on small screens */
 }
 
-.hero-title {
-  font-size: 3rem; /* Equivalent to text-5xl */
-  line-height: 1.25; /* Equivalent to leading-tight */
-  font-weight: 700; /* Equivalent to font-bold */
-  color: #ffffff; /* Equivalent to text-white */
-  margin-bottom: 1.5rem; /* Equivalent to mb-6 */
+.hero-title6 {
+  font-size: 2.25rem; /* Smaller for mobile (text-4xl equivalent) */
+  line-height: 1.25;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem; /* Slightly reduced margin */
 }
 
-@media (min-width: 768px) { /* md breakpoint for Tailwind */
-  .hero-title {
-    font-size: 3.75rem; /* Equivalent to md:text-6xl */
+@media (min-width: 480px) { /* Small mobile devices get a bit larger text */
+  .hero-title6 {
+    font-size: 2.75rem;
   }
 }
 
-.hero-description {
-  font-size: 1.25rem; /* Equivalent to text-xl */
-  color: #ffffff; /* Equivalent to text-white */
-  margin-bottom: 2.5rem; /* Equivalent to mb-10 */
-  max-width: 80rem; /* Equivalent to max-w-3xl */
+@media (min-width: 768px) { /* Medium breakpoint (md:text-6xl) */
+  .hero-title6 {
+    font-size: 3.75rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.hero-description6 {
+  font-size: 1rem; /* Smaller for mobile (text-base equivalent) */
+  color: #ffffff;
+  margin-bottom: 2rem; /* Slightly reduced margin */
+  max-width: 36rem; /* Restrict width for readability on larger phones */
   margin-left: auto;
   margin-right: auto;
 }
 
-@media (min-width: 768px) { /* md breakpoint for Tailwind */
-  .hero-description {
-    font-size: 1.5rem; /* Equivalent to md:text-2xl */
+@media (min-width: 480px) { /* Small mobile devices get a bit larger text */
+  .hero-description6 {
+    font-size: 1.125rem; /* text-lg */
   }
 }
 
-.hero-buttons {
+@media (min-width: 768px) { /* Medium breakpoint (md:text-2xl) */
+  .hero-description6 {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    max-width: 48rem; /* Original max-w-3xl */
+  }
+}
+
+.hero-buttons6 {
   display: flex;
-  flex-direction: column; /* Equivalent to flex-col */
+  flex-direction: column; /* Stacks buttons vertically on mobile */
   justify-content: center;
-  gap: 1rem; /* Equivalent to space-y-4 */
+  gap: 1rem; /* Space between stacked buttons */
 }
 
-@media (min-width: 640px) { /* sm breakpoint for Tailwind */
-  .hero-buttons {
-    flex-direction: row; /* Equivalent to sm:flex-row */
-    gap: 1.5rem; /* Equivalent to sm:space-x-6 */
-    margin-top: 0; /* Equivalent to sm:space-y-0 */
+@media (min-width: 640px) { /* Small breakpoint (sm:flex-row) */
+  .hero-buttons6 {
+    flex-direction: row; /* Buttons in a row on larger screens */
+    gap: 1.5rem; /* Space between horizontal buttons */
   }
 }
 
-.btn-get-started,
-.btn-apply-exams {
-  font-weight: 700; /* Equivalent to font-bold */
-  color: #ffffff; /* Equivalent to text-white */
-  padding: 0.75rem 2rem; /* Equivalent to py-3 px-8 */
-  border-radius: 0.5rem; /* Equivalent to rounded-lg */
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
-  transition-property: background-color, transform;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* Equivalent to transition duration-300 */
-  transform: scale(1); /* Initial scale for transform hover:scale-105 */
+.btn-get-started6,
+.btn-apply-exams6 {
+  font-weight: 700;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem; /* Adjusted padding for buttons */
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease; /* Combined transition properties */
+  transform: scale(1);
   cursor: pointer;
   border: none;
+  width: 100%; /* Make buttons full width on small screens */
+  max-width: 300px; /* Limit max width for buttons */
+  margin: 0 auto; /* Center buttons when stacked */
 }
 
-.btn-get-started {
-  background-color: #ef4444; /* Equivalent to bg-red-500 */
+@media (min-width: 640px) {
+  .btn-get-started6,
+  .btn-apply-exams6 {
+    width: auto; /* Reset width for horizontal layout */
+    margin: 0; /* Remove auto margins */
+  }
 }
 
-.btn-get-started:hover {
-  background-color: #dc2626; /* Equivalent to hover:bg-red-600 */
-  transform: scale(1.05); /* Equivalent to transform hover:scale-105 */
+.btn-get-started6 {
+  background-color: #ef4444;
 }
 
-.btn-apply-exams {
-  background-color: #dc2626; /* Equivalent to bg-red-600 */
+.btn-get-started6:hover {
+  background-color: #dc2626;
+  transform: scale(1.05);
 }
 
-.btn-apply-exams:hover {
-  background-color: #b91c1c; /* Equivalent to hover:bg-red-700 */
-  transform: scale(1.05); /* Equivalent to transform hover:scale-105 */
+.btn-apply-exams6 {
+  background-color: #dc2626;
 }
 
-.menu{
+.btn-apply-exams6:hover {
+  background-color: #b91c1c;
+  transform: scale(1.05);
+}
+
+.menu6{
   font-size: 0px;
 }
 
-@media only screen and (min-width: 200px) and (max-width: 560px){
-
-  .menu{
+@media (max-width: 510px) {
+  .menu6{
     font-size: 30px;
   }
 }
+
+.mobile-menu-overlay6 {
+  position: fixed; /* Fixed to viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  display: flex;
+  justify-content: right;
+  align-items: top;
+  z-index: 100; /* Ensure it's on top of everything */
+  animation: fadeIn 0.3s ease-out; /* Simple fade-in animation */
+}
+
+.mobile-menu-content6 {
+  background-color: #ffffff;
+  padding: 1rem;
+  width: 35%; /* Take up most of the screen width */
+  height: 30%;
+  margin-top: 10%;
+  margin-right: 10%;
+  max-width: 350px; /* Limit max width for tablets/larger phones */
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex; /* Arrange links vertically */
+  flex-direction: column;
+  gap: 1.5rem; /* Space between mobile menu links */
+  position: relative; /* For positioning the close button */
+  animation: slideIn 0.3s ease-out; /* Simple slide-in animation */
+}
+
+.mobile-navbar-link6 {
+  color: #000000; /* Black color for links in mobile menu */
+  text-decoration: none;
+  font-size: 1.25rem; /* Larger font size for mobile links */
+  font-weight: bold;
+  padding: 0.2rem 0;
+  transition: color 0.2s ease;
+}
+
+.mobile-navbar-link6:hover {
+  color: #ef4444; /* Hover color for mobile links */
+}
+
+.close-menu-btn6 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+  padding: 5px;
+  line-height: 1; /* Prevent extra space above/below 'x' */
+}
+
+/* Existing styles for navbar, hero-section etc. should remain */
+
+/* Container for College and Degree Images */
+.image-showcase-section6 {
+  display: flex; /* Use flexbox to put items side-by-side */
+  justify-content: center; /* Center the items horizontally */
+  align-items: flex-start; /* Align items to the start of the cross-axis (top) */
+  gap: 80px; /* This creates the space between the image containers */
+  flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+  /* background-color: #f8f8f8; /* A very light background for this section 
+  border-bottom: 1px solid #eee; A subtle separator from content below */
+}
+
+/* Styles for the individual image containers (College and Degree) */
+.college-image6,
+.degree-image6 {
+  display: flex; /* Use flex for content inside (image and text) */
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center; /* Center image and text horizontally within their container */
+  /* background-color: #fff; White background for the card-like effect */
+  padding: 15px; /* Padding inside the container */
+  max-width: 300px; /* Max width for each card */
+  width: 100%; /* Ensure it takes full width up to max-width */
+  text-align: center; /* Center the text below the image */
+  font-family: 'Inter', sans-serif; /* Use Inter font */
+  color: #ffffff; /* Darker text color */
+  font-weight: 600; /* Slightly bolder text */
+
+  /* Smooth transition for hover effect on the entire card */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Specific shadow for the college image container */
+/* .college-image {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Standard subtle shadow 
+} */
+
+/* Specific shadow for the degree image container (right down) */
+/* .degree-image {
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow offset right and down 
+} */
+
+/* Styles for the actual images inside the containers */
+.col-image6 {
+  width: 60%; /* Image takes full width of its parent div */
+  height: 180px; /* Fixed height for consistency */
+  object-fit: cover; /* Ensures images cover their area without distortion */
+  border-radius: 70px; /*Rounded corners for the images themselves */
+  margin-bottom: 10px; /* Space between image and text */
+}
+
+/* Hover effect for both image containers */
+.college-image6:hover,
+.degree-image6:hover {
+  transform: scale(1.05); /* Enlarge the entire container by 5% */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .image-showcase-section6 {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: center; /* Center items when stacked */
+    gap: 30px; /* Adjust gap for vertical stacking */
+  }
+
+  .college-image6,
+  .degree-image6 {
+    max-width: 80%; /* Make cards wider on small screens */
+  }
+}
+
+/* Your existing .navbar, .mobile-menu-overlay, .hero-section, etc., styles should remain */
